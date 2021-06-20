@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Mine own blog</b></h1>
+  <p>Welcometh to the blog of <span class="w3-tag">unknown</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+
+
+{%block entry%}
+
+
+
+{%endblock%}
+
+
+<!-- Introduction menu -->
+<div class="w3-col l4" style="width: 100%;">
+  <!-- About Card -->
+  <div class="w3-card">
+    {%block image_login%}
+    {%endblock%}
+  
+    <div class="w3-container w3-white">
+      {%block content%}
+	  {%endblock%}
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4><b>Links</b></h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+
+      <a href="/register" style="text-decoration: none;">
+        <li class="w3-padding-16">
+          <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Register.</span><br>
+          <span>Create an Account</span>
+        </li>
+      </a>
+
+      <a href="/login" style="text-decoration: none;">
+        <li class="w3-padding-16">
+          <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Login.</span><br>
+          <span>Access your Account</span>
+        </li>
+      </a>
+      <a href="/logout" style="text-decoration: none;">
+        <li class="w3-padding-16">
+          <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Logout.</span><br>
+          <span>Exit your Account</span>
+        </li>
+      </a>
+      <a href="/feed/1" style="text-decoration: none;">
+        <li class="w3-padding-16">
+          <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Feed.</span><br>
+          <span>Browse the latest posts.</span>
+        </li> 
+      </a>
+      <a href="/Contact" style="text-decoration: none;">
+        <li class="w3-padding-16">
+          <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Contact Us.</span><br>
+          <span>Always here for you.</span>
+        </li>   
+      </a>
+      <a href="/about" style="text-decoration: none;">
+        <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+          <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">About.</span><br>
+          <span>More about us.</span>
+        </li>
+      </a>    
+      </ul>
+  </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">Python</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Mumbai</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Django</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Cooking</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Unity</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Life</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">League Of Legends</span> 
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+{%block nav%}
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button onclick="location.href = './{{id_prev}}'" class="w3-button w3-black w3-padding-large w3-margin-bottom">Previous</button>
+  <button onclick="location.href = './{{id_next}}'" class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,12 @@
+{%extends "registration/base.html"%}
+
+{% if user.is_authenticated %}
+    {% block header %}
+        Logged In. Welcome {{user.username}}.
+    {% endblock %}
+{%endif%}
+
+{% block content %}
+There is no content yet. New content arriving shortly.
+{% endblock %}
+

@@ -1,0 +1,89 @@
+{%extends 'feed/base.html'%}
+{%block entry%}
+
+
+  <div class="w3-col l8 s12">
+    {%for feed in feed_set %}
+  
+
+
+
+    {% if feed.id == id1 %}
+      <!-- Blog entry -->
+      <div class="w3-card-4 w3-margin w3-white">
+        {% load static %}
+        <img src ="{% static 'feed/' %}{{feed.display_photo}}.jpg" alt="Profile Picture" style="width:100%">  
+        <div class="w3-container">
+          <h3><b>{{feed.display_title}}</b></h3>
+          <h5>{{feed.display_text}} <span class="w3-opacity">April 7, 2014</span></h5>
+        </div>
+
+        <div class="w3-container">
+          <p>Debakun12</p>
+          <div class="w3-row">
+            <div class="w3-col m8 s12">
+
+                <p><button  onclick="location.href = './{{feed.display_link}}'" class="w3-button w3-padding-large w3-white w3-border" type="submit"><b>READ MORE »</b></button></p>
+            
+              </div>
+            <div class="w3-col m4 w3-hide-small">
+              <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    <!-- END BLOG ENTRIES -->
+
+
+    {%elif feed.id == id2 %}
+    <!-- Blog entry -->
+    <div class="w3-card-4 w3-margin w3-white">
+      {% load static %}
+      <img src ="{% static 'feed/' %}{{feed.display_photo}}.jpg" alt="Profile Picture" style="width:100%">  
+      <div class="w3-container">
+        <h3><b>{{feed.display_title}}</b></h3>
+        <h5>{{feed.display_text}} <span class="w3-opacity">April 7, 2014</span></h5>
+      </div>
+
+      <div class="w3-container">
+        <p>Debakun12</p>
+        <div class="w3-row">
+          <div class="w3-col m8 s12">
+
+            <p><button onclick="location.href = './{{feed.display_link}}'" class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+
+          </div>
+          <div class="w3-col m4 w3-hide-small">
+            <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+  <!-- END BLOG ENTRIES -->
+
+
+  {%endif%}
+  {%endfor%}
+  </div>
+
+
+{%endblock%}
+
+{%block nav%}
+  {% if id == 1%}
+    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+      <button disabled onclick="location.href = './{{id_prev}}'" class="w3-button  w3-black w3-padding-large w3-margin-bottom">Previous</button>
+      <button onclick="location.href = './{{id_next}}'" class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
+  {%else%}
+  <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+    <button  onclick="location.href = './{{id_prev}}'" class="w3-button  w3-black w3-padding-large w3-margin-bottom">Previous</button>
+    <button onclick="location.href = './{{id_next}}'" class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  </footer>
+  {%endif%}
+
+{%endblock%}
